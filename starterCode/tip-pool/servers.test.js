@@ -18,15 +18,17 @@ describe("Servers test (with setup and tear-down)", function() {
   })
 
   it('should update #servertable on updateServerTable()', function () {
+   
+    let liveTableList = document.querySelectorAll("#serverTable tbody tr td")
+
     submitServerInfo()
     updateServerTable()
 
-    let liveTableList = document.querySelectorAll("#serverTable tbody tr td")
-    expect(liveTableList.length).toEqual(3)
+    expect((liveTableList.length).toEqual(3))
 
-    expect(liveTableList[0].innerText).toEqual('Alice')
-    expect(liveTableList[1].innerText).toEqual('$0.00')
-    expect(liveTableList[2].innerText).toEqual('X')
+    expect((liveTableList[0].innerText).toEqual('Alice'))
+    expect((liveTableList[1].innerText).toEqual('$0.00'))
+    expect((liveTableList[2].innerText).toEqual('X'))
   })
 
   afterEach(function() {
